@@ -1,25 +1,49 @@
-import logo from './logo.svg';
-import './App.css';
+import { createUseStyles } from 'react-jss';
+import React from 'react';
+import { Routes, Route, Link } from 'react-router-dom';
+import NavBar from './components/NavBar';
+import About from './pages/About';
+import Home from './pages/Home';
+import SideBar from './components/SideBar';
+import Album from './components/Album';
+import Users from './pages/Users';
+import User from './pages/User';
 
-function App() {
+
+const styles = createUseStyles({
+  content : {
+      top: '100px',
+      position: 'absolute',
+      left: '100px',
+      backgroundColor: 'rgb(100, 100, 100)',
+  },
+//width = 100% - 100px maybe ?
+
+
+});
+
+function App() { 
+  const classes = styles();
+
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <NavBar />
+      <SideBar/>
+      <div className={classes.content}>
+        <Routes>
+          <Route path="/about" element={<About />} />
+          <Route path="*" element={<Home />} /> {/*Default website aka Home*/}
+          <Route path="/albums" element={<Album />} />
+          <Route path="/users" element={<Users />} />
+          <Route path="/users/user/:id" element={<User/>} />
+
+          {/* Inne komponenty lub routing */}
+        </Routes>
+      </div>
+    </>
   );
+
 }
 
 export default App;
