@@ -1,7 +1,7 @@
 import { createUseStyles } from 'react-jss';
 
 
-const companyName = "Twatter";
+const companyName = "Twajtter";
 
 export const companyVersions = {
 
@@ -16,15 +16,4 @@ export const companyVersions = {
 }
 
 }
-/*
-function SideBar() {
-    const classes = styles();
-
-
-    return (
-    );
-}
-
-export default SideBar;
-*/
 

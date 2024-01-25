@@ -17,6 +17,7 @@ const styles = createUseStyles({
         position: 'fixed',
         width: '100%',
         display: 'flex',
+        zIndex: 1000,
     },
     links: {
         height: '100px',

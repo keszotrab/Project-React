@@ -10,15 +10,10 @@ const styles = createUseStyles({
     userCard: {
         width: '200px',
         height: '100px',
-    },
-    picture: {
-        height: '100px',
-        backgroundColor: 'rgb(172, 229, 181)',
-        position: 'fixed',
-        width: '100%',
-        display: 'flex',
+        border: '2px solid black',  
+        borderRadius: '8px',      
     }
-})
+});
 
 function UserCard(props) {
     const classes = styles();
@@ -27,11 +22,7 @@ function UserCard(props) {
     return (
         <>
         <div className={classes.userCard}>
-            <div className={classes.picture}>
-            </div>
-            <div>
-
-            </div>
+            {props.username}
         </div>
         
         </>

@@ -5,9 +5,10 @@ import NavBar from './components/NavBar';
 import About from './pages/About';
 import Home from './pages/Home';
 import SideBar from './components/SideBar';
-import Album from './components/Album';
-import Users from './pages/Users';
+import UserList from './pages/UserList';
 import User from './pages/User';
+import AlbumList from './pages/AlbumList';
+import Album from './pages/Album';
 
 
 const styles = createUseStyles({
@@ -34,11 +35,10 @@ function App() {
         <Routes>
           <Route path="/about" element={<About />} />
           <Route path="*" element={<Home />} /> {/*Default website aka Home*/}
-          <Route path="/albums" element={<Album />} />
-          <Route path="/users" element={<Users />} />
-          <Route path="/users/user/:id" element={<User/>} />
-
-          {/* Inne komponenty lub routing */}
+          <Route path="/users" element={<UserList />} />
+          <Route path="/users/:id" element={<User/>} />
+          <Route path="/albums" element={<AlbumList />} />
+          <Route path="/albums/:id" element={<Album/>} />
         </Routes>
       </div>
     </>
