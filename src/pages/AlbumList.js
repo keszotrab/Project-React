@@ -1,45 +1,8 @@
-import { createUseStyles } from 'react-jss';
-import logo from '../logo.svg';
-import { companyVersions } from '../data/companyData';
-import UserCard from '../components/UserCard';
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-
-
-const styles = createUseStyles({
-  albumList: {
-    width: 'calc(100vw - 115px)',
-    minHeight: 'calc(100vh - 100px)',
-  },
-
-  AlbumCard: {
-    padding: "4px",
-    margin: '4px'
-
-  },
-
-  albumsCard: {
-    width: '300px',
-    height: '150px',
-    border: '2px solid black',
-    borderRadius: '8px',
-  },
-  albumsFlexContainer: {
-    display: 'flex',
-    flexDirection: 'row',
-    justifyContent: 'flex-start',
-    alignItems: 'flex-start',
-    flexWrap: 'wrap',
-  }
-
-
-
-})
-
+import '../styles/AlbumList.css';
 
 const AlbumList = () => {
-
-  const classes = styles();
   const [albums, setAlbums] = useState([]);
   const [users, setUsers] = useState([]);
 
@@ -65,9 +28,6 @@ const AlbumList = () => {
 
     return userAlbums;
   }
-
-
-
 
   useEffect(() => {
     const fetchAlbumData = async () => {
@@ -98,24 +58,22 @@ const AlbumList = () => {
       }
     };
 
-
     fetchUserData();
     fetchAlbumData();
   }, []);
 
   return (
-    <div className={classes.albumList}>
-      <h2>Album List</h2>
-      <div className={classes.albumsFlexContainer}>
-        {albums.map(album => (
-          <div className={classes.albumsCard} key={album.id}>
-            <Link to={`/albums/${album.id}`}  >
-              <h4>{album.title}</h4>
+    <div className="album-list">
+      <h2>📚 Album List 📚</h2>
+      <div className="albums-flex-container">
+        {albums.map((album) => (
+          <div className="albums-card" key={album.id}>
+            <Link to={`/albums/${album.id}`}>
+              <h4>🖼️ {album.title}</h4>
             </Link>
-            <h5>Author: {users.find((user) => user.id == album.userId) ? users.find((user) => user.id == album.userId).name : "loading" }</h5>
+            <h5 className='autor'>📸 Author: {users.find((user) => user.id == album.userId) ? users.find((user) => user.id == album.userId).name : "loading" }</h5>
           </div>
         ))}
-
       </div>
     </div>
   );

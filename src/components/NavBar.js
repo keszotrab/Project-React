@@ -1,55 +1,27 @@
-import { createUseStyles } from 'react-jss';
-import logo from '../logo.svg';
-import { Link } from 'react-router-dom';
-import NavLabel from './NavLabel';
-//import './App.css';
-// bacground color 172, 229, 181, 1
+import React from "react";
+import { Link } from "react-router-dom";
+import "../styles/NavBar.css";
+
+import NavLabel from "./NavLabel";
 
 
-const styles = createUseStyles({
-    logo: {
-        width: '100px',
-        height: '100px',
-    },
-    navBar: {
-        height: '100px',
-        backgroundColor: 'rgb(172, 229, 181)',
-        position: 'fixed',
-        width: '100%',
-        display: 'flex',
-        zIndex: 1000,
-    },
-    links: {
-        height: '100px',
-        backgroundColor: 'rgb(172, 229, 181)',
-        position: 'relative',
-        width: '100%',
-        display: 'flex',
-        justifyContent: 'right',
-        columnGap: '20px',
-        alignItems: 'center',
-    }
-
-})
-
-function NavBar() {
-    const classes = styles();
-
-
-    return (
-
-        <div className={classes.navBar}>
-            <Link to="/">
-                <img src={logo} className={classes.logo} alt="logo" />
-            </Link>
-            <div className={classes.links}>
-                {/* potencjalny search bar czy cos*/}
-                    <NavLabel text="Dołącz teraz!" adress="/about" fontSize='40px'></NavLabel>
-                    <NavLabel text="O nas" adress="/about" fontSize='40px'></NavLabel>
-                
-            </div>
-        </div>
-    );
-}
+const NavBar = () => {
+  return (
+    <div className="navBar">
+      <Link to="/">
+        <img src="./photos/logo.png" className="logo" alt="logo" />
+      </Link>
+      <div className="links2">
+        <div className="Header">🔪 J(A)SON 🩸</div>
+        <NavLabel
+          text="Dołącz teraz!"
+          adress="/about"
+          className="a"
+        ></NavLabel>
+        <NavLabel text="O nas" adress="/about" className="a"></NavLabel>
+      </div>
+    </div>
+  );
+};
 
 export default NavBar;

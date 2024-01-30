@@ -1,7 +1,7 @@
 import { createUseStyles } from 'react-jss';
 
 
-const companyName = "Twajtter";
+const companyName = "J(A)SON";
 
 export const companyVersions = {
 

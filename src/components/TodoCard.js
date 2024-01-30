@@ -1,46 +1,24 @@
-import { createUseStyles } from 'react-jss';
-import logo from '../logo.svg';
+import React from 'react';
 import { Link } from 'react-router-dom';
 import NavLabel from './NavLabel';
-
-
-
-const styles = createUseStyles({
-    todoCard: {
-        width: '200px',
-        height: '100px',
-        border: '2px solid black',
-        borderRadius: '8px',
-    },
-    todoTitle: {
-
-    },
-    todoStatus: {
-        
-    }
-
-});
+import "../styles/ToDoCard.css"; 
 
 function TodoCard(props) {
-    const classes = styles();
-
     let status = () => {
-        {
-            if (!props.status) {
-                return "Do zrobienia";
-            }
-            else if (props.status) {
-                return "Zrobione"
-            }
+        if (!props.status) {
+            return "Do zrobienia";
+        } else {
+            return "Zrobione";
         }
     }
+
     return (
-        <>
-            <div className={classes.todoCard}>
-                <div className={classes.todoTitle} >To do: {props.title}</div>
-                <div className={classes.status} >Status: {status()}</div>
+        <div className="todoCard">
+            <div className="todoTitle"><span className='TODO'>❗ To do: ❗ </span><br/>{props.title}</div>
+            <div className={props.status ? "todoStatus todoStatusDone" : "todoStatus todoStatusToDo"}>
+                Status: {status()}
             </div>
-        </>
+        </div>
     );
 }
 

@@ -1,0 +1,45 @@
+.todoCard {
+    width: 400px;
+    height: 130px;
+    border: 2px solid black;
+    border-radius: 8px;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 10px;
+    text-align: center;
+    margin:10px;
+    background-color: rgb(55, 45, 45);
+    transition:1s;
+}
+
+.todoCard:hover{
+    width:420px;
+    height:150px;
+    font-style:italic;
+    transition: 1s;
+}
+
+.TODO{
+    font-weight: bold;
+    font-size:25px;
+    color:rgb(210, 206, 206);
+}
+
+.todoTitle {
+    font-weight: bold;
+}
+
+.todoStatus {
+    font-style: italic;
+    font-weight: bold;
+}
+
+.todoStatusToDo {
+    color: red;
+}
+
+.todoStatusDone {
+    color: rgb(0, 223, 0);
+}

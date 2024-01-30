@@ -1,0 +1,55 @@
+.logo {
+    width: 100px;
+    height: 100px;
+}
+
+.navBar {
+    height: 100px;
+    background: linear-gradient(to left, rgb(142, 14, 0), rgb(31, 28, 24));
+    position: fixed;
+    width: 100%;
+    display: flex;
+    z-index: 100;
+}
+
+/*sidebar*/
+.links {
+    height: 100px;
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: right;
+    column-gap: 20px;
+    align-items: center;
+}
+
+/*navbar*/
+.links2{
+    height: 100px;
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: right;
+    column-gap: 20px;
+    align-items: center;
+    margin-right: 30px;
+}
+
+.Header {
+    margin: auto;
+    font-family: sans-serif;
+    font-size: 50px;
+    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.8);
+    color: white;
+    transition: text-shadow 1.3s ease-in-out;
+    transition: 1.6s;
+  }
+  
+  .Header:hover {
+    font-size: 60px;
+    color:rgb(192, 2, 2);
+    text-shadow: 4px 4px 8px rgba(0, 0, 0, 1);
+    font-style: italic;
+    transition: 1.6s;
+  }
+  

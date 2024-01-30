@@ -1,23 +1,27 @@
 import { createUseStyles } from 'react-jss';
-import logo from '../logo.svg';
 import { companyVersions } from '../data/companyData';
 
-//import './App.css';
-// bacground color 172, 229, 181, 1
-const company = companyVersions.companyPL;
 
 const styles = createUseStyles({
-    logo: {
-        width: '100px',
-        height: '100px',
+    container: {
+      display: 'flex',
+      flexDirection: 'column',
+      alignItems: 'center',
+      justifyContent: 'center',
     },
-    navBar: {
-        height: '100px',
-        backgroundColor: 'rgb(172, 229, 181)',
-        position: 'fixed',
-        width: '100%'
-    }
-});
+    sum: {
+      display: 'flex',
+      flexDirection: 'column',
+      alignItems: 'center',
+      justifyContent: 'center',
+      color: 'white',
+      textShadow: '2px 2px 4px rgba(0, 0, 0, 0.5)',
+      fontSize: '34px',
+      marginLeft:'50vh',
+      marginTop:'30vh',
+      textAlign:'center'
+    },
+  });
 
 function Home() {
     const classes = styles();
@@ -25,10 +29,13 @@ function Home() {
 
 
     return (
-
-        <div className="Bob">
-            <h1>Welcome to {company.name}</h1>
+        <div className={classes.container}>
+        <div className={classes.sum}>
+          Projekt zaliczeniowy wykonany przez:<br />
+          Bartosz Adamek<br />
+          Mateusz Czernik
         </div>
+      </div>
     );
 }
 

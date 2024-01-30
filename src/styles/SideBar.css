@@ -1,0 +1,21 @@
+.sideBar {
+    top: 100px;
+    background: linear-gradient(to top, rgb(142, 14, 0), rgb(31, 28, 24));
+    position: fixed;
+    width: 100px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.links {
+    margin-top: 20px;
+    height: 100px;
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: right;
+    row-gap: 50px;
+    align-items: center;
+    flex-direction: column;
+}

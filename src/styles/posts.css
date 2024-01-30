@@ -1,0 +1,116 @@
+.App {
+  font-family: sans-serif;
+  text-align: center;
+}
+
+.post {
+  display: flex;
+  width: 600px;
+  justify-content: center;
+  margin: 5px auto;
+  border: solid 3px black;
+  background-color: rgb(55, 45, 45);
+  padding: 5px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  transition: 1s;
+}
+.post:hover {
+  width: 610px;
+  transition: 1s;
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.pagination span {
+  cursor: pointer;
+  margin: 0 10px;
+  font-weight: bold;
+  transition: 1s;
+}
+
+.pagination span:hover {
+  color: red;
+  font-size:20px;
+  font-weight: bold;
+  transition: 1s;
+}
+
+.post-list-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+}
+
+.posts-container {
+  text-align: center;
+  margin-bottom: 20px;
+  margin-left: 20px;
+}
+
+.buttons {
+  text-align: center;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: 0.5s;
+  background-size: 200% auto;
+  border-radius: 10px;
+  display: inline-block;
+  border: 0px;
+  font-weight: 700;
+  background-image: linear-gradient(45deg, #FF0000 -4.5%, #B30000 16.5%, #660000 33%, #330000 52%, #1A0200 68%, #110100 98.8%);
+  cursor: pointer;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  color: rgb(255, 255, 255);
+  transition: 0.7s;
+  margin:5px;
+  padding:5px;
+}
+
+.buttons:hover {
+    background-position: right center;
+    color: #ff0000;
+    text-decoration: none;
+    transition: 0.7s;
+}
+
+.buttons:active {
+    transform: scale(0.95);
+}
+
+.hpost{
+  margin:auto;
+  font-weight: bolder;
+  font-family: sans-serif;
+  text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.8);
+  color: white;
+  transition: text-shadow 1.3s ease-in-out;
+}
+
+input, textarea{
+  background-color: rgb(107, 112, 117);
+  width:260px;
+  margin:5px;
+  color:white;
+  font-weight:bold;
+  border: solid 3px black;
+  border-radius: 2px;
+}
+
+textarea{
+  height: 100px;
+  max-height: 300px;
+  resize: none;
+}
+
+input::placeholder,textarea::placeholder {
+  color: black;
+  text-align: center;
+}

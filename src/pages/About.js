@@ -1,42 +1,42 @@
+import React from 'react';
 import { createUseStyles } from 'react-jss';
-import logo from '../logo.svg';
 import { companyVersions } from '../data/companyData';
 
-//import './App.css';
-// bacground color 172, 229, 181, 1
-    const company = companyVersions.companyPL;
-    
+const company = companyVersions.companyPL;
 
-    const styles = createUseStyles({
-        logo : {
-            width : '100px',
-            height : '100px',
-        },
-        navBar : {
-            height : '100px',
-            backgroundColor : 'rgb(172, 229, 181)',
-            position : 'fixed',
-            width : '100%'
-        }
-
-
-
-    })
+const styles = createUseStyles({
+  container: {
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  sum: {
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center',
+    justifyContent: 'center',
+    color: 'white',
+    textShadow: '2px 2px 4px rgba(0, 0, 0, 0.5)',
+    fontSize: '34px',
+    marginLeft:'50vh',
+    marginTop:'30vh',
+    textAlign:'center'
+  },
+});
 
 function About() {
-    const classes = styles();
+  const classes = styles();
 
-
-    return (
-
-      <div className="AboutContet">
-        <h1>
-            We are {company.name}
-        </h1>
-        {company.slogan}
+  return (
+    <div className={classes.container}>
+      <div className={classes.sum}>
+        Projekt zaliczeniowy wykonany przez:<br />
+        Bartosz Adamek<br />
+        Mateusz Czernik
       </div>
-      );
-  }
-  
-  export default About;
-  
+    </div>
+  );
+}
+
+export default About;
