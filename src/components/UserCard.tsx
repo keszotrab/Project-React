@@ -1,6 +1,7 @@
 import { createUseStyles } from 'react-jss';
 import { Link } from 'react-router-dom';
 import NavLabel from './NavLabel';
+import React from 'react';
 
 
 const styles = createUseStyles({
@@ -12,18 +13,20 @@ const styles = createUseStyles({
     }
 });
 
-function UserCard(props) {
+
+interface UserCardProps {
+    username: string;
+}
+
+
+function UserCard(props:UserCardProps) {
     const classes = styles();
 
 
     return (
-        <>
         <div className={classes.userCard}>
             {props.username}
         </div>
-        
-        </>
-            
     );
 }
 

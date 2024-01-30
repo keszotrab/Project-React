@@ -6,9 +6,9 @@ const SideBar = () => {
     return (
         <div className="sideBar">
             <div className="links">
-                <NavLabel text="Posts" adress="/posts" fontSize='20px' />
-                <NavLabel text="Albums" adress="/albums" fontSize='20px' />
-                <NavLabel text="Users" adress="/users" fontSize='20px' />
+                <NavLabel text="Posts" adress="/posts"  />
+                <NavLabel text="Albums" adress="/albums"  />
+                <NavLabel text="Users" adress="/users"  />
             </div>
         </div>
     );

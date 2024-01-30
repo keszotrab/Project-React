@@ -6,6 +6,38 @@ import TodoCard from '../components/TodoCard';
 
 const company = companyVersions.companyPL;
 
+interface Address {
+  street: string;
+  suite: string;
+  city: string;
+  zipcode: string;
+}
+
+interface Company {
+  name: string;
+  catchPhrase: string;
+  bs: string;
+}
+
+interface User {
+  id: number;
+  name: string;
+  username: string;
+  email: string;
+  address: Address;
+  phone: string;
+  website: string;
+  company: Company; 
+}
+
+interface Todo
+{
+  id: number;
+  title: string;
+  completed: boolean;
+}
+
+
 const styles = createUseStyles({
   navBar: {
     height: '100px',
@@ -35,8 +67,9 @@ const User = () => {
   const classes = styles();
   const { id } = useParams();
 
-  const [userData, setUserData] = useState(null);
-  const [todoData, setTodoData] = useState(null);
+  
+  const [userData, setUserData] = useState<User | null>(null);
+  const [todoData, setTodoData] = useState<Todo[] | null>(null);
 
   useEffect(() => {
     const fetchUserData = async () => {
@@ -120,7 +153,7 @@ const User = () => {
       </div>
       <div className={classes.todosContainer}>
         {todoData.map(todo => (
-          <div className={classes.userCard} key={todo.id}>
+          <div key={todo.id}>
             <TodoCard title={todo.title} status={todo.completed} />
           </div>
         ))}

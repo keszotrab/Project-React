@@ -3,7 +3,14 @@ import { Link } from 'react-router-dom';
 import NavLabel from './NavLabel';
 import "../styles/ToDoCard.css"; 
 
-function TodoCard(props) {
+interface TodoCardProps {
+    title: string;
+    status: boolean;
+}
+
+
+
+function TodoCard(props: TodoCardProps) {
     let status = () => {
         if (!props.status) {
             return "Do zrobienia";

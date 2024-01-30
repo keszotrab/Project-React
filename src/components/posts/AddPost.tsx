@@ -1,7 +1,15 @@
 import React from "react";
 
-export const AddPost = ({ onAddPost }) => {
-  const handleOnSubmit = (evt) => {
+
+
+interface AddPostProps {
+  onAddPost: any;
+}
+
+
+
+export const AddPost: React.FC<AddPostProps> = ({ onAddPost }) => {
+  const handleOnSubmit = (evt:any) => {
     evt.preventDefault();
     onAddPost(evt.target.title.value, evt.target.body.value);
     evt.target.title.value = "";

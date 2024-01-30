@@ -1,12 +1,25 @@
 import React, { useEffect, useState } from "react";
 
-export const Comments = ({ postId }) => {
-  const [comments, setComments] = useState([]);
 
-  //Aktualizuje komentarze dla posta po kliknieciu view comments
+
+interface CommentsProps {
+  postId: number;
+}
+
+interface Comments{
+  id?: string;
+  name?: string;
+  body?: string;
+}
+
+
+export const Comments: React.FC<CommentsProps> = ({ postId }) => {
+  const [comments, setComments] = useState<Comments[] | null>([]);
+
+  // Aktualizuje komentarze dla posta po kliknięciu view comments
   useEffect(() => {
     fetchComments();
-  }, [postId]); 
+  }, [postId]);
 
   const fetchComments = async () => {
     await fetch(`https://jsonplaceholder.typicode.com/posts/${postId}/comments`)
@@ -14,6 +27,8 @@ export const Comments = ({ postId }) => {
       .then((data) => setComments(data))
       .catch((error) => console.log(error));
   };
+if (comments != null) {
+  
 
   return (
     <div>
@@ -30,5 +45,5 @@ export const Comments = ({ postId }) => {
         <p>No comments available</p>
       )}
     </div>
-  );
+  );}else {return (<>dzieje sie, ładuje coś...</>)}
 };

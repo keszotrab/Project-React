@@ -1,6 +1,22 @@
 import React, { useState } from "react";
 
-export const Post = ({
+interface PostProps {
+  post: {
+    id: number;
+    title: string;
+    body: string;
+    fetchPosts: any;
+    // Add any other properties if needed
+  };
+  onSelectPost: (post: any) => void; // Replace 'any' with the correct type for onSelectPost
+  onDeletePost: (postId: number) => void;
+  fetchComments: (postId: number) => void;
+  onEditPost: (postId: number, title: string, body: string) => Promise<void>;
+  fetchPosts: () => Promise<void>; 
+
+}
+
+export const Post: React.FC<PostProps> = ({
   post,
   onSelectPost,
   onDeletePost,
@@ -23,7 +39,7 @@ export const Post = ({
     setIsEdit(!isEdit);
   };
 
-  const handleOnEditSubmit = async (evt) => {
+  const handleOnEditSubmit = async (evt: React.FormEvent) => {
     evt.preventDefault();
     await onEditPost(editedPost.id, editedPost.title, editedPost.body);
     setIsEdit(false);

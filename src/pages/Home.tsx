@@ -1,6 +1,6 @@
 import { createUseStyles } from 'react-jss';
 import { companyVersions } from '../data/companyData';
-
+import React from 'react';
 
 const styles = createUseStyles({
     container: {

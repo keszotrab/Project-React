@@ -2,13 +2,19 @@ import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import Carousel from 'react-bootstrap/Carousel';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import '../styles/Album.css';  // Import arkusza stylów
+import '../styles/Album.css';
+
+interface Photo {
+  id: number;
+  url: string;
+  title: string;
+}
 
 const Album = () => {
   const { id } = useParams();
 
-  const [albumData, setAlbumData] = useState(null);
-  const [photosData, setPhotosData] = useState(null);
+  const [albumData, setAlbumData] = useState<{ title: string } | null>(null);
+  const [photosData, setPhotosData] = useState<Photo[] | null>(null);
 
   useEffect(() => {
     const fetchAlbumData = async () => {
